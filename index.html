@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <video src="video/winter-landscape-snow.mp4" controls="true" height="500px"></video>
+
+    <div id="waveform">
+        <audio controls  src="mus/две тысячи ярдов - верните в моду любовь.mp3"></audio>
+      </div>
+      
+      <script type="module">
+      import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js'
+      
+      const wavesurfer = WaveSurfer.create({
+        container: '#waveform',
+        waveColor: '#4F4A85',
+        progressColor: '#383351',
+        url: '/audio.mp3',
+      })
+      
+      wavesurfer.on('interaction', () => {
+        wavesurfer.play()
+      })
+      </script>
+</body>
+</html>
